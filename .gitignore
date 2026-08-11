@@ -1,0 +1,14 @@
+# Compiled C/C++ output
+*.exe
+*.o
+*.obj
+*.ilk
+*.pdb
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+
+# Local build directories
+build/
+cmake-build-*/
