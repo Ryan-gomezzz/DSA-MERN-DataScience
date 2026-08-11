@@ -1,0 +1,33 @@
+Diffrent file formats used for data science
+
+spredsheet formats
+Comma seprated value and excels sheets 
+
+Any file format can be used into spyder 
+csv -> Comma seprated values 
+
+Each record seprated by a comma and there is even tab seprated values 
+
+Excel spreadsheets 
+.xlsx
+
+Text records its .txt 
+
+How to import data into spyder?
+
+Import os -> library to change the wokring dircetory 
+
+import pandas as pd  --> Used to work with data frames
+
+os.chdir(Give file path )
+
+data_csv=pd.read_csv('Data_sample.csv')
+
+Blank cells will be read as nan 
+
+Text Fomrat 
+
+data_txt=pd.read_table("Sample.txt")
+
+
+

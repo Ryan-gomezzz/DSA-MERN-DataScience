@@ -1,0 +1,43 @@
+11. Pass by Value vs Pass by Reference
+This is a slightly advanced but important concept. When we pass variables to functions, how are they sent?
+
+Pass by Value (The Photocopy)
+In Pass By Value, the function gets a copy of the variable. Changing the copy does NOT change the original.
+
+C++
+
+
+#include <iostream>
+using namespace std;
+
+void changeValue(int x) {
+    x = 100; // Changes only the copy
+}
+
+int main() {
+    int num = 10;
+    changeValue(num);
+    cout << num; // Output: 10 (Original didn't change!)
+}
+Pass by Reference (The Original)
+In Pass by Reference, we send the address of the variable (using &). The function works on the original variable.
+
+C++
+
+
+#include <iostream>
+using namespace std;
+
+void changeRealValue(int &x) { // Note the '&'
+    x = 100; // Changes the actual variable
+}
+
+int main() {
+    int num = 10;
+    changeRealValue(num);
+    cout << num; // Output: 100 (It changed!)
+}
+Analogy:
+- Pass by Value: Sharing a photo of your homework. If your friend writes on the photo, your notebook stays clean.
+- Pass by Reference: Giving your actual notebook. If your friend writes in it, your notebook is changed.
+

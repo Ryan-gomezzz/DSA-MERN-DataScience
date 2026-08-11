@@ -1,0 +1,51 @@
+1. Abstract Class
+An abstract class is a class that cannot be instantiated directly. It can have both abstract methods (methods without a body) and regular methods (methods with a body). Abstract methods are intended to be implemented by subclasses, ensuring that each subclass provides its own specific implementation of the method.
+
+Key Points about Abstract Classes:
+Cannot be Instantiated: An abstract class cannot be used to create objects directly. It must be inherited by a subclass, and only the subclass can be instantiated.
+Abstract Methods: These are methods without implementation in the abstract class, and the subclasses are required to provide their own implementations.
+Can Have Regular Methods: Along with abstract methods, an abstract class can also have fully defined methods.
+Java
+
+
+abstract class Animal {
+    // Abstract method (no implementation)
+    abstract void sound();
+
+    // Regular method
+    void sleep() {
+        System.out.println("This animal sleeps.");
+    }
+}
+
+// Subclass providing implementation for abstract method
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+In this example, Animal is an abstract class with an abstract method sound(). The subclass Dog must provide its own implementation for sound(), while it can also inherit and use the regular method sleep().
+2. Interfaces
+In Java, abstraction can also be achieved using interfaces. An interface is a completely abstract type that defines a contract for classes to implement. It contains only abstract methods (prior to Java 8), which must be implemented by any class that "implements" the interface. From Java 8 onwards, interfaces can also contain default and static methods with implementation.
+
+Key Points about Interfaces:
+Pure Abstraction: An interface only defines what methods should be present; the actual implementation is provided by the classes that implement the interface.
+No Instantiation: Like abstract classes, interfaces cannot be instantiated. They only serve as a blueprint.
+Multiple Implementation: A class can implement multiple interfaces, allowing for more flexibility compared to single inheritance in classes.
+Java
+
+
+interface Animal {
+    void sound(); // Abstract method (no body)
+}
+
+// Class implementing the interface
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+In this example, Animal is an interface, and the Dog class implements the sound() method. Any class that implements Animal must provide its own implementation of the sound() method.
+Advantages of Abstraction with Interfaces:
+Multiple Inheritance: A class can implement multiple interfaces, unlike classes that can only extend one class.
+Loose Coupling: Interfaces help to reduce the dependencies between different parts of the code, making the system more modular and easier to maintain.
